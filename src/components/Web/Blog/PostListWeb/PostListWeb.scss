@@ -1,0 +1,41 @@
+@import "../../../../scss/index.scss";
+
+.post-list-web{
+     margin: 50px 0;
+
+     >h1{
+         text-align : center;
+         color      : $font-light;
+         margin     : 50px 0;
+     }
+
+     .post{
+         color: $font-light;
+         justify-content: left;
+         &__date{
+             display: flex ;
+             align-items: center;
+             flex-direction: column;
+             background-color: $primary-color;
+             margin-right: 20px;
+             border-radius: 5px;
+             text-transform: capitalize;
+             padding: 5px 15px;
+         }
+
+         &__title{
+             padding-left: 20px ;
+             padding-right: 50px;
+             width: 500px !important;
+             font-size: large;
+         }
+         .ant-list-item-meta-title{
+             color: $font-light;
+             font-size:  16 px;
+             &:hover{
+                color: $primary-color-dark;
+             }
+         }
+
+     }
+}
