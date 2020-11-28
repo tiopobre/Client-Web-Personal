@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Spin, notification } from 'antd';
+import { Helmet } from 'react-helmet';
 import moment from 'moment';
 import { getPostApi } from '../../../../api/post';
 import "moment/locale/es";
@@ -26,16 +27,21 @@ export default function PostInfo ({ url }) {
         />
     }
     return (
-        <div className = "post-info">
-            <h1 className = "post-info__title">{ postInfo.title }</h1>
-            <div className = "post-info__creation-date">
-                { moment( postInfo.date ).local("es").format("LL") }
+        <>
+            <Helmet>
+                <title> { postInfo.title } | Daniel Serrano </title>
+            </Helmet>
+            <div className = "post-info">
+                <h1 className = "post-info__title">{ postInfo.title }</h1>
+                <div className = "post-info__creation-date">
+                    { moment( postInfo.date ).local("es").format("LL") }
+                </div>
+                <div 
+                    className = "post-info__description"
+                    dangerouslySetInnerHTML = {{ __html: postInfo.description }}
+                />
             </div>
-            <div 
-                className = "post-info__description"
-                dangerouslySetInnerHTML = {{ __html: postInfo.description }}
-            />
-        </div>
+        </>
      );
 }
  

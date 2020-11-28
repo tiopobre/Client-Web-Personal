@@ -1,5 +1,6 @@
 import React, { useState,m, useEffect } from 'react';
 import { Spin, List, notification } from 'antd';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import queryString from 'query-string';
@@ -33,18 +34,23 @@ export default function PostListWeb ({ location, history }) {
         );
     }
     return ( 
-        <div className = "post-list-web">
-            <h1>Blog</h1>
-            <List
-                dataSource = { posts.docs }
-                renderItem = { post => <Post post = { post }/> }
-            />
-            <Pagination
-                posts={ posts }
-                location = { location }
-                history = { history }
-            />
-        </div>
+        <>
+            <Helmet>
+                    <title> Blog | Daniel Serrano </title>
+                </Helmet>
+            <div className = "post-list-web">
+                <h1>Blog</h1>
+                <List
+                    dataSource = { posts.docs }
+                    renderItem = { post => <Post post = { post }/> }
+                />
+                <Pagination
+                    posts={ posts }
+                    location = { location }
+                    history = { history }
+                />
+            </div>
+        </>
      );
 }
 
