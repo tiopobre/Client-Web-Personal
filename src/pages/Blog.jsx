@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import { useParams, withRouter } from 'react-router-dom';
 import PostListWeb from '../components/Web/Blog/PostListWeb';
+import PostInfo from '../components/Web/Blog/PostInfo';
 export default function Blog ({ location, history }) {
     const { url } = useParams();    
     console.log(url);
@@ -10,12 +11,12 @@ export default function Blog ({ location, history }) {
             <Col md = {4}/>
             <Col md = {16}>
                 { url ?
-                    "Post Infi ..."
+                        <PostInfo url = {url}/>
                     :
-                    <PostListWeb
-                        location = { location }
-                        history = { history }
-                    />
+                        <PostListWeb
+                            location = { location }
+                            history = { history }
+                        />
                 }
             </Col>
             <Col md = {4}/>
