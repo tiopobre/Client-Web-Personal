@@ -28,8 +28,6 @@ export default function PostsList({ posts, setReloadPosts, editPost }) {
                     .catch(  );
             }
         });
-       
-        console.log( "delete post",post)
     }
     return ( 
         <div>

@@ -5,7 +5,6 @@ import PostListWeb from '../components/Web/Blog/PostListWeb';
 import PostInfo from '../components/Web/Blog/PostInfo';
 export default function Blog ({ location, history }) {
     const { url } = useParams();    
-    console.log(url);
     return ( 
         <Row>
             <Col md = {4}/>

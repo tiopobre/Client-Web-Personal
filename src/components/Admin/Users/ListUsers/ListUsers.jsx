@@ -234,7 +234,6 @@ export default function ListUsers  ({ usersActive, usersInactive, setReloadUsers
                 />
             </div>
         );
-        console.log('añadir usuario...') 
     }
     
     return ( 

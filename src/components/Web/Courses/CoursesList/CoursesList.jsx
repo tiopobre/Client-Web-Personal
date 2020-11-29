@@ -39,11 +39,7 @@ const Course =({ course }) => {
                 setCourseData( response.data );
             }   
         })
-        console.log( course.idCourse );
-        console.log( course );
-        console.log( course.link );
         nounUrl( courseData.link );
-        console.log( 'url final', urlCourse ) ;
     }, [ course ]); 
     if ( !courseData ) {
         return null;
@@ -54,10 +50,8 @@ const Course =({ course }) => {
             const baseUrl = `https://www.udemy.com${ url }`
             const finalUrl = baseUrl +  ( course.cupon ? `?couponCode= ${ course.cupon }` : "" );
             setUrlCourse( course.link );
-            console.log("sin link",finalUrl ); 
         }else{
             setUrlCourse( course.link );
-            console.log("con link", urlCourse ); 
         } 
     }
 

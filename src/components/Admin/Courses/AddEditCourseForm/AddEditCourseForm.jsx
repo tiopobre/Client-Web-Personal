@@ -8,10 +8,7 @@ import { getAccesTokenApi } from '../../../../api/auth';
 import './AddEditCourseForm.scss';
 export default function AddEditCourseForm({ setIsVisibleModal, setReloadCourses, course }) {
     const [ courseData, setCourseData ] = useState({});
-    console.log( 'Add edit course : ', course );
     useEffect( ()  => {
-        console.log( "************* UseEffect ****************" );
-        console.log( 'Add edit course : ', course );
         course ? setCourseData( course ) : setCourseData({});
     } , [ course ]);
     const addCourse = ( e ) =>{
@@ -35,8 +32,6 @@ export default function AddEditCourseForm({ setIsVisibleModal, setReloadCourses,
 
     const updateCourse = ( e ) =>{
         e.preventDefault();
-        console.log("Actualizando curso");
-        
         const accesToken = getAccesTokenApi();
         updateCourseApi ( accesToken, courseData._id ,courseData )
             .then( response => {   

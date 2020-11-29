@@ -42,7 +42,6 @@ export default function CoursesList ({ courses, setReloadCourses }) {
    const addCourseModal =  course  =>{
         setIsVisibleModal( true );
         setModalTitle ( !course ? "Creando Nuevo Curso" : `Editar Curso ${ course.idCourse }` ); 
-        console.log( "List course ", course )
         setModalContent (
             <AddEditCourseForm
                 course = { course }

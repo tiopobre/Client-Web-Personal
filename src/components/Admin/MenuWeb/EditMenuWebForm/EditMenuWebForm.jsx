@@ -23,12 +23,10 @@ export default function EditMenuWebForm ({ setIsVisibleModal, setReloadMenuWeb, 
                 .then( response => {
                     setIsVisibleModal( false );
                     setReloadMenuWeb( true );
-                    console.log("entra then");
                     notification["success"]({ message: response });
                 })
                 .catch( () => {
                     notification["error"]({ message: "Error del servidor" });
-                    console.log("entra catch");
                  });
             
         }
